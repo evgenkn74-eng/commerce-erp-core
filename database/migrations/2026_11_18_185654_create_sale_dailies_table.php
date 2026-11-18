@@ -19,7 +19,8 @@ return new class extends Migration
 			$table->decimal('amount', 12, 2);
 
 			$table->unique(['product_id', 'sale_date'], 'uq_sales_product_date');
-			$table->index(['sale_date', 'product_id'], 'idx_sale_date_product');
+			// $table->index(['sale_date', 'product_id'], 'idx_sale_date_product');
+			$table->index(['sale_date', 'product_id', 'quantity'], 'idx_sale_date_product_qty');
 		});
     }
 
