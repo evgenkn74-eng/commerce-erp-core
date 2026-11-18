@@ -13,7 +13,7 @@ class CustomerReview extends Model
         'external_id', 'product_id', 'rating', 'text',
         'status', 'ai_draft', 'answered_at',
     ];
-
+	// Указывает Laravel автоматически преобразовывать сырые данные из MySQL в удобные PHP-типы при чтении и обратно при записи
     protected $casts = [
         'rating' => 'integer',
         'answered_at' => 'datetime',
@@ -21,6 +21,7 @@ class CustomerReview extends Model
 
     public function product(): BelongsTo
     {
+		// Это обратная связь «принадлежит к» (Many-to-One): каждый конкретный отзыв относится к одному товару
         return $this->belongsTo(Product::class);
     }
 }

@@ -13,6 +13,8 @@ Route::get('/', function () {
 
 // 2. Обычный POST-запрос (аналог вашего метода post)
 // Route::post('/submit', [PostController::class, 'store']);
+// string
+// Route::get('/submit', 'App\Http\Controllers\PostController@store');
 
 // 3. Несколько методов на один адрес (аналог вашего универсального метода)
 // Route::match(['get', 'post'], '/feedback', [PostController::class, 'feedback']);
